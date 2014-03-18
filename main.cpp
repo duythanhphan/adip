@@ -44,6 +44,7 @@ int main(int argc, char** argv) {
     //fn = adip::Remap;
     //fn = adip::Geometric;
     //fn = adip::CopyMakeBorder;
+    fn = adip::BasicLinearTransforms;
 
     if (!fn) {
         printf("Please specify the test function\n");
