@@ -41,6 +41,9 @@ int main(int argc, char** argv) {
     //fn = adip::Filter2D;
     //fn = adip::HoughCircle;
     //fn = adip::HoughLines;
+    //fn = adip::Remap;
+    //fn = adip::Geometric;
+    //fn = adip::CopyMakeBorder;
 
     if (!fn) {
         printf("Please specify the test function\n");

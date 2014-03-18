@@ -45,6 +45,12 @@ int Filter2D(Mat org_image, Mat *mod_image);
 int HoughCircle(Mat org_image, Mat *mod_image);
 int HoughLines(Mat org_image, Mat *mod_image);
 
+int Remap(Mat org_image, Mat *mod_image);
+
+int Geometric(Mat org_image, Mat *mod_image);
+
+int CopyMakeBorder(Mat org_image, Mat *mod_image);
+
 }  // namespace adip
 
 
