@@ -17,31 +17,11 @@ static const char* result_window = "Result window";
 static int match_method;
 static int max_Trackbar = 5;
 
-int adip::MatchTemplate(int argc, char** argv) {
-    /// Load image and template
-    img = imread( argv[1], 1 );
-    templ = imread( argv[2], 1 );
-
-    /// Create windows
-    namedWindow( image_window, CV_WINDOW_AUTOSIZE );
-    namedWindow( result_window, CV_WINDOW_AUTOSIZE );
-
-    /// Create Trackbar
-    const char* trackbar_label = "Method: \n 0: SQDIFF \n 1: SQDIFF NORMED \n 2: TM CCORR \n 3: TM CCORR NORMED \n 4: TM COEFF \n 5: TM COEFF NORMED";
-    createTrackbar( trackbar_label, image_window, &match_method, max_Trackbar, MatchingMethod );
-
-    MatchingMethod( 0, 0 );
-
-    waitKey(0);
-
-    return 1;
-}
-
 /**
  * @function MatchingMethod
  * @brief Trackbar callback
  */
-void adip::MatchingMethod(int, void*) {
+static void MatchingMethod(int, void*) {
     /// Source image to display
     Mat img_display;
     img.copyTo( img_display );
@@ -78,3 +58,24 @@ void adip::MatchingMethod(int, void*) {
 
     return;
 }
+
+int adip::MatchTemplate(int argc, char** argv) {
+    /// Load image and template
+    img = imread( argv[1], 1 );
+    templ = imread( argv[2], 1 );
+
+    /// Create windows
+    namedWindow( image_window, CV_WINDOW_AUTOSIZE );
+    namedWindow( result_window, CV_WINDOW_AUTOSIZE );
+
+    /// Create Trackbar
+    const char* trackbar_label = "Method: \n 0: SQDIFF \n 1: SQDIFF NORMED \n 2: TM CCORR \n 3: TM CCORR NORMED \n 4: TM COEFF \n 5: TM COEFF NORMED";
+    createTrackbar( trackbar_label, image_window, &match_method, max_Trackbar, MatchingMethod );
+
+    MatchingMethod( 0, 0 );
+
+    waitKey(0);
+
+    return 1;
+}
+

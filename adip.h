@@ -21,23 +21,18 @@ int DFT(Mat org_image, Mat *mod_image);
 
 int CalcHist(Mat org_image, Mat *mod_image);
 
-void CannyThreshold(int, void*);
 int CannyDetector(Mat org_image, Mat *mod_image);
 
 int EqualizeHist(Mat org_image, Mat *mod_image);
 
 int Laplace(Mat org_image, Mat *mod_image);
 
-void MatchingMethod(int, void*);
 int MatchTemplate(int argc, char** argv);
 
-int display_caption(const char* caption);
-int display_dst(int delay);
-int Smoothing(int argc, char **argv);
+int Smoothing(Mat org_image, Mat *mod_image);
 
 int Sobel(Mat org_image, Mat *mod_image);
 
-void Threshold_Demo(int, void*);
 int Threshold(Mat org_image, Mat *mod_image);
 
 int Filter2D(Mat org_image, Mat *mod_image);

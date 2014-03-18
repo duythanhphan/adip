@@ -24,7 +24,7 @@ static const char* window_name = "Edge Map";
  * @function CannyThreshold
  * @brief Trackbar callback - Canny thresholds input with a ratio 1:3
  */
-void adip::CannyThreshold(int, void*) {
+static void CannyThreshold(int, void*) {
     /// Reduce noise with a kernel 3x3
     blur( src_gray, detected_edges, Size(3,3) );
 

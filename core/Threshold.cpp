@@ -25,7 +25,7 @@ static const char* trackbar_value = "Value";
 /**
  * @function Threshold_Demo
  */
-void adip::Threshold_Demo(int, void*) {
+static void Threshold_Demo(int, void*) {
     /* 0: Binary
      1: Binary Inverted
      2: Threshold Truncated

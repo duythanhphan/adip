@@ -35,7 +35,6 @@ int main(int argc, char** argv) {
     //fn = adip::DFT;
     //fn = adip::EqualizeHist;
     //fn = adip::Laplace;
-
     //fn = adip::Sobel;
     //fn = adip::Threshold;
     //fn = adip::Filter2D;
@@ -44,7 +43,8 @@ int main(int argc, char** argv) {
     //fn = adip::Remap;
     //fn = adip::Geometric;
     //fn = adip::CopyMakeBorder;
-    fn = adip::BasicLinearTransforms;
+    //fn = adip::BasicLinearTransforms;
+    //fn = adip::Smoothing;
 
     if (!fn) {
         printf("Please specify the test function\n");
