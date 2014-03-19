@@ -10,8 +10,11 @@
 using namespace std;
 using namespace cv;
 
-typedef int (*FN_TYPE) (Mat org_image, Mat *mod_image);
-FN_TYPE fn;
+adip::FN_TYPE fn;
+
+uchar* adip::GetData(Mat image) {
+    return image.data;
+}
 
 int main(int argc, char** argv) {
     Mat org_image, mod_image;
@@ -28,6 +31,15 @@ int main(int argc, char** argv) {
         exit(EXIT_FAILURE);
     }
 
+    // Show image
+    const char *org_name = "Original Image";
+    const char *mod_name = "Modified Image";
+
+    namedWindow( org_name, CV_WINDOW_NORMAL );
+    namedWindow( mod_name, CV_WINDOW_NORMAL );
+
+    imshow(org_name, org_image);
+
     // Test function
 
     //fn = adip::CalcHist;
@@ -38,13 +50,20 @@ int main(int argc, char** argv) {
     //fn = adip::Sobel;
     //fn = adip::Threshold;
     //fn = adip::Filter2D;
-    //fn = adip::HoughCircle;
+    fn = adip::HoughCircle;
     //fn = adip::HoughLines;
     //fn = adip::Remap;
     //fn = adip::Geometric;
     //fn = adip::CopyMakeBorder;
     //fn = adip::BasicLinearTransforms;
     //fn = adip::Smoothing;
+    //fn = adip::Morphology_1;
+    //fn = adip::Morphology_2;
+    //fn = adip::Pyramids;
+    //fn = adip::AddingImages;
+
+    //fn = adip::logpolar_bsm;
+    //fn = adip::letter_recognize;
 
     if (!fn) {
         printf("Please specify the test function\n");
@@ -53,9 +72,10 @@ int main(int argc, char** argv) {
 
     // Process image and return
     if (fn(org_image, &mod_image) == 0) {
-        // Show image
-        imshow("Original Image", org_image);
-        imshow("Modified Image", mod_image);
+        imshow(mod_name, mod_image);
+
+//        cvtColor(mod_image, org_image, CV_GRAY2RGB);
+//        adip::Threshold(org_image, &mod_image);
 
         waitKey();
     }

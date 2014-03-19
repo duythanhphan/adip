@@ -59,10 +59,10 @@ static void MatchingMethod(int, void*) {
     return;
 }
 
-int adip::MatchTemplate(int argc, char** argv) {
+int adip::MatchTemplate(Mat org_image, Mat *mod_image) {
     /// Load image and template
-    img = imread( argv[1], 1 );
-    templ = imread( argv[2], 1 );
+    img = org_image;
+    templ = *mod_image;
 
     /// Create windows
     namedWindow( image_window, CV_WINDOW_AUTOSIZE );
