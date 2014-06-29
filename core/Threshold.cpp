@@ -46,7 +46,7 @@ int adip::Threshold(Mat org_image, Mat *mod_image) {
     cvtColor( src, src_gray, CV_RGB2GRAY );
 
     /// Create a window to display results
-    namedWindow( window_name, CV_WINDOW_NORMAL );
+    namedWindow( window_name, CV_WINDOW_AUTOSIZE );
 
     /// Create Trackbar to choose type of Threshold
     createTrackbar( trackbar_type,

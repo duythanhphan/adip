@@ -47,10 +47,10 @@ int main(int argc, char** argv) {
     //fn = adip::DFT;
     //fn = adip::EqualizeHist;
     //fn = adip::Laplace;
-    //fn = adip::Sobel;
+    fn = adip::Sobel;
     //fn = adip::Threshold;
     //fn = adip::Filter2D;
-    fn = adip::HoughCircle;
+    //fn = adip::HoughCircle;
     //fn = adip::HoughLines;
     //fn = adip::Remap;
     //fn = adip::Geometric;
@@ -61,6 +61,7 @@ int main(int argc, char** argv) {
     //fn = adip::Morphology_2;
     //fn = adip::Pyramids;
     //fn = adip::AddingImages;
+    //fn = adip::ConnectedComponents;
 
     //fn = adip::logpolar_bsm;
     //fn = adip::letter_recognize;
@@ -73,9 +74,8 @@ int main(int argc, char** argv) {
     // Process image and return
     if (fn(org_image, &mod_image) == 0) {
         imshow(mod_name, mod_image);
-
 //        cvtColor(mod_image, org_image, CV_GRAY2RGB);
-//        adip::Threshold(org_image, &mod_image);
+//        adip::ConnectedComponents(org_image, &mod_image);
 
         waitKey();
     }

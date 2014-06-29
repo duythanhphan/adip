@@ -50,6 +50,7 @@ int Morphology_1(Mat org_image, Mat *mod_image);
 int Morphology_2(Mat org_image, Mat *mod_image);
 int Pyramids(Mat org_image, Mat *mod_image);
 int AddingImages(Mat org_image, Mat *mod_image);
+int ConnectedComponents(Mat org_image, Mat *mod_image);
 
 typedef int (*FN_TYPE) (Mat org_image, Mat *mod_image);
 
