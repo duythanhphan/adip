@@ -61,5 +61,9 @@ int letter_recognize(Mat org_image, Mat *mod_image);
 
 }  // namespace adip
 
+void EMDemo( cv::Mat org_image);
+void KMeanDemo( cv::Mat org_image);
+void OtsuDemo( cv::Mat org_image);
+void SegmentationDemo( cv::Mat org_image);
 
 #endif /* ADIP_H_ */
